@@ -20,11 +20,7 @@ pipeline {
 
                   steps {
 
-                          post {
-        always {
-            emailext body: 'A Test EMail', recipientProviders: [[$class: 'hemant14750@gmail.com'], [$class: 'hemant14750@gmail.com']], subject: 'Test'
-        }
-    }
+       
                         echo 'COMPILE THE FILE'
                         tool name: 'Local_maven', type: 'maven'
                         sh 'mvn -f pom.xml package'
