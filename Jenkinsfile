@@ -46,12 +46,15 @@ pipeline {
 
                         echo 'Testing'
                        junit '**/target/surefire-reports/*.xml'
-                        emailext body: '', recipientProviders: [upstreamDevelopers()], subject: 'hii', to: 'hemant14750@gmial.com'
-                       
 
                   }
 
             }
+            post {
+        always {
+            emailext body: 'A Test EMail', recipientProviders: [[$class: 'hemant14750@gmail.com'], [$class: 'hemant14750@gmail.com']], subject: 'Test'
+        }
+    }
             stage('Deploy') {
 
                   steps {
