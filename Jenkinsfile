@@ -46,6 +46,7 @@ pipeline {
 
                         echo 'Testing'
                        junit '**/target/surefire-reports/*.xml'
+                        emailext body: '', recipientProviders: [upstreamDevelopers()], subject: 'hii', to: 'hemant14750@gmial.com'
                        
 
                   }
