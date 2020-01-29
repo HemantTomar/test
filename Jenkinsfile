@@ -66,7 +66,7 @@ pipeline {
                   }
 
             }
-              post {
+              stage('mail') {
         always {
             emailext body: 'A Test EMail', recipientProviders: [[$class: 'hemant14750@gmail.com'], [$class: 'hemant14750@gmail.com']], subject: 'Test'
         }
