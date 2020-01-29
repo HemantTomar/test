@@ -64,7 +64,7 @@ pipeline {
             }
               stage('mail') {
         steps {
-            emailext body: 'A Test EMail', recipientProviders: [[$class: 'hemant14750@gmail.com'], [$class: 'hemant14750@gmail.com']], subject: 'Test'
+            mail bcc: 'no', body: 'test success', cc: 'yes', from: '', replyTo: '', subject: 'test', to: 'hemant14750@gmail.com'
         }
     }
 
