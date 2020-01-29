@@ -65,7 +65,7 @@ pipeline {
               stage('mail') {
         steps {
             mail  body: 'test success', from: '', replyTo: '', subject: 'test', to: 'hemant14750@gmail.com'
-              emailext attachLog: true, body: 'test', compressLog: true, recipientProviders: [upstreamDevelopers()], subject: 'test', to: 'hemant14750@gmial.com'
+             emailext attachLog: true, body: 'test', compressLog: true, subject: 'test', to: 'hemant14750@gmial.com'
         }
     }
 
