@@ -66,7 +66,7 @@ pipeline {
         steps {
             mail  body: 'test success', from: '', replyTo: '', subject: 'test', to: 'hemant14750@gmail.com'
              emailext  attachLog: true, body: 'test', subject: 'test', to: 'hemant14750@gmail.com'
-               emailext (to: 'hemant14750@gmail.com', replyTo: 'hemant14750@gmail.com', subject: "Email Report from - '${env.JOB_NAME}' ", body: readFile("**/target/surefire-reports/*.txt"), mimeType: 'text/xml');
+               emailext (to: 'hemant14750@gmail.com', replyTo: 'hemant14750@gmail.com', subject: "Email Report from - '${env.JOB_NAME}' ", body: readFile("**/target/surefire-reports/com.example.TestGreeter.txt"), mimeType: 'text/xml');
         }
     }
 
