@@ -65,7 +65,7 @@ pipeline {
               stage('mail') {
         steps {
             mail  body: 'test success', from: '', replyTo: '', subject: 'test', to: 'hemant14750@gmail.com'
-             emailext attachLog: true, body: 'test', subject: 'test', to: 'hemant14750@gmail.com'
+             emailext attachmentsPattern: '/var/lib/jenkins/workspace/pipeline/target/surefire-reports/*, attachLog: true, body: 'test', subject: 'test', to: 'hemant14750@gmail.com'
         }
     }
 
