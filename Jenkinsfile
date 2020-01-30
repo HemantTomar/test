@@ -58,7 +58,7 @@ pipeline {
 
                         echo 'Deploying Sample Maven Project'
                         copyArtifacts filter: '**/*.war', fingerprintArtifacts: true, projectName: 'pipeline', selector: lastWithArtifacts()
-                        deploy adapters: [tomcat9(credentialsId: 'eb4b742d-2197-4c9e-9c71-07cd27a5a9b9', path: '', url: 'http://13.59.30.88:9090/')], contextPath: '/', war: '**/*.war'
+                        deploy adapters: [tomcat9(credentialsId: 'eb4b742d-2197-4c9e-9c71-07cd27a5a9b9', path: '', url: 'http://18.220.151.169:9090/')], contextPath: '/', war: '**/*.war'
                   }
 
             }
